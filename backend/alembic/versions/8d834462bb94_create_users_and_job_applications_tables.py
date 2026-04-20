@@ -1,8 +1,8 @@
-"""create users and job_application tables
+"""create users and job applications tables
 
-Revision ID: fe12d0532122
+Revision ID: 8d834462bb94
 Revises: 
-Create Date: 2026-04-20 23:47:44.134038
+Create Date: 2026-04-21 00:08:30.230014
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'fe12d0532122'
+revision: str = '8d834462bb94'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -38,7 +38,7 @@ def upgrade() -> None:
     sa.Column('job_role', sa.String(), nullable=False),
     sa.Column('location', sa.String(), nullable=False),
     sa.Column('date_applied', sa.DateTime(timezone=True), nullable=False),
-    sa.Column('status', sa.Enum('APPLIED', 'OA', 'INTERVIEW', 'REJECTED', 'OFFER', 'ACCEPTED', name='applicationstatus'), nullable=False),
+    sa.Column('status', sa.Enum('Applied', 'OA', 'Interview', 'Rejected', 'Offer', 'Accepted', name='applicationstatus'), nullable=False),
     sa.Column('job_url', sa.String(), nullable=False),
     sa.Column('recruiter_email', sa.String(), nullable=True),
     sa.Column('notes', sa.Text(), nullable=True),

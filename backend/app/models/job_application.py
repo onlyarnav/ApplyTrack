@@ -23,9 +23,12 @@ class JobApplication(Base):
         nullable=False,
     )
     status: Mapped[str] = mapped_column(
-        SAEnum(ApplicationStatus, name="applicationstatus"),
+    SAEnum(
+        ApplicationStatus,
+        name="applicationstatus",
+        values_callable=lambda x: [e.value for e in x]), 
         index=True
-    )
+        )
     job_url: Mapped[str] = mapped_column()
 
     recruiter_email: Mapped[str | None] = mapped_column()
