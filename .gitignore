@@ -1,6 +1,10 @@
 #env file
 .env
 
+# virtual environment
+venv/
+.venv/
+
 #pycache and node modules
 __pycache__/
 *.pyc
